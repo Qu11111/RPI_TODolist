@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/items.css">
+    <link rel="stylesheet" href="styles/add.css">
+    <link rel="stylesheet" href="styles/clear.css">
+    <title>Папеев Сергей Сергеевич</title>
+</head>
+<body>
+    <header>
+        <h1>Список задач</h1>
+    </header>
+    <div class="task-entry">
+        <h2>Новая задача</h2>
+        <input type="search" placeholder="Название задачи..." class="task-entry-input">
+        <button class="task-entry-add"> + Добавить</button>
+    </div>
+    <section class="task-container">
+        <label class="task-status planned">Бэклог</label>
+        <ul class="task-list-planned">
+            <li class="task-item">Выучить JS</li>
+            <li class="task-item">Выучить React</li>
+            <li class="task-item">Сделать домашку</li>
+        </ul>
+
+        <label class="task-status in-progress">В процессе</label>
+        <ul class="task-list-in-progress">
+            <li class="task-item">Выпить смузи</li>
+            <li class="task-item">Попить воды</li>
+        </ul>
+
+        <label class="task-status completed">Готово</label>
+        <ul class="task-list-completed">
+            <li class="task-item">Позвонить маме</li>
+            <li class="task-item">Погладить кота</li>
+        </ul>
+
+        <label class="task-status archive">Корзина</label>
+        <ul class="task-list-archive">
+            <li class="task-item">Сходить погулять</li>
+            <li class="task-item">Прочитать Войну и Мир</li>
+        </ul>
+        <button class="task-clear">X Очистить</button>
+    </section>
+</body>
+</html>

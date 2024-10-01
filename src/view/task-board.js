@@ -1,6 +1,5 @@
-import { createElement } from '../framework/render.js';
+import { AbstractComponent } from '../framework/view/abstract-component.js';
 import TaskListComponent from './task-list.js';
-
 
 function createTaskContainerTemplate() {
   return `
@@ -21,43 +20,41 @@ function createTaskContainerTemplate() {
   `;
 }
 
-
-export default class TaskContainerComponent {
+export default class TaskContainerComponent extends AbstractComponent {
   constructor(tasks, onTaskClear) {
+    super();
     this.tasks = tasks;
     this.onTaskClear = onTaskClear;
-    this.element = null;
     this.taskLists = {};
   }
 
-
-  getTemplate() {
+  get template() {
     return createTaskContainerTemplate();
   }
 
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-
-
-      const taskListContainers = this.element.querySelectorAll('.task-list');
+  get element() {
+    const el = super.element;
+    
+    if (Object.keys(this.taskLists).length === 0) {
+      const taskListContainers = el.querySelectorAll('.task-list');
       taskListContainers.forEach(taskListContainer => {
         const taskListStatus = taskListContainer.previousElementSibling.textContent;
-        this.taskLists[taskListStatus] = new TaskListComponent(this.tasks.filter(task => task.status === taskListStatus), taskListContainer);
+        this.taskLists[taskListStatus] = new TaskListComponent(
+          this.tasks.filter(task => task.status === taskListStatus),
+          taskListContainer
+        );
       });
 
-
-      this.element.querySelector('.task-clear').addEventListener('click', () => {
+      el.querySelector('.task-clear').addEventListener('click', () => {
         this.onTaskClear();
       });
     }
-    return this.element;
+
+    return el;
   }
 
-
   removeElement() {
-    this.element = null;
+    super.removeElement();
     Object.values(this.taskLists).forEach(taskList => taskList.removeElement());
     this.taskLists = {};
   }

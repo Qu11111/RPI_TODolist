@@ -24,10 +24,6 @@ export const tasks = [
         'title':`Два`,
         'status':`in-progress`,
     },
-    {
-        'id':`6`,
-        'title':`Четыре`,
-        'status':`archive`,
-    },
+ 
     
 ]

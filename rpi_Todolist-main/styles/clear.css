@@ -1,0 +1,14 @@
+.task-clear {
+    width: 192px;
+    height: 40px;
+    margin-top: 160px;
+    margin-left: -192px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(167, 53, 53);
+}
+
+.task-clear:hover {
+    background-color: rgb(141, 47, 47);
+}

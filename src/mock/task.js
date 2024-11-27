@@ -1,29 +1,7 @@
 export const tasks = [
-    {
-        'id':`1`,
-        'title':`Выучить JS`,
-        'status':`backlog`,
-    },
-    {
-        'id':`2`,
-        'title':`Привет`,
-        'status':`backlog`,
-    },
-    {
-        'id':`3`,
-        'title':`Пока`,
-        'status':`backlog`,
-    },
-    {
-        'id':`4`,
-        'title':`Раз`,
-        'status':`completed`,
-    },
-    {
-        'id':`5`,
-        'title':`Два`,
-        'status':`in-progress`,
-    },
- 
-    
-]
+    { 'id': 1, 'title': 'Выучить JS', 'status': 'planned' },
+    { 'id': 2, 'title': 'Привет', 'status': 'planned' },
+    { 'id': 3, 'title': 'Пока', 'status': 'planned' },
+    { 'id': 4, 'title': 'Раз', 'status': 'archive' },
+    { 'id': 5, 'title': 'Два', 'status': 'in' },
+];

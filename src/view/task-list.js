@@ -1,12 +1,12 @@
-import { AbstractComponent } from '../framework/view/abstract-component.js';
+import { AbstractComponent } from '../framework/view/abstract-component.js'; 
 
-export default class ListTaskComponent extends AbstractComponent {
-  constructor(className = 'task-list') {
-    super();
+export default class ListTaskComponent extends AbstractComponent { 
+  constructor(className = 'task-list') { 
+    super(); 
     this.className = className; 
-  }
+  } 
 
-  get template() {
+  get template() { 
     return `<ul class="${this.className}"></ul>`; 
-  }
+  } 
 }
